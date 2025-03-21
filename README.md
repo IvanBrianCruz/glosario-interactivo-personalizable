@@ -1,6 +1,6 @@
 # Glosario Interactivo
 
-![Glosario Interactivo](ruta/a/imagen.png)
+![Glosario Interactivo](https://raw.githubusercontent.com/IvanBrianCruz/glosario-interactivo-personalizable/refs/heads/master/img/banner.png)
 
 ## Descripción
 
@@ -27,5 +27,5 @@ Si deseas crear una versión personalizada con tus propios audios y conceptos, s
 
 ## Descargar
 
-[⬇️ Descargar Glosario Interactivo para Windows](ruta/a/la/descarga.exe)
+[⬇️ Descargar Glosario Interactivo para Windows](https://drive.usercontent.google.com/download?id=1cFKGFkBF7cX9WEaTT_KHJvjX-ANADgTD&export=download)
 
