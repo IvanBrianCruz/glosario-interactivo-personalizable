@@ -1,0 +1,48 @@
+{
+    "name": "glosario-interactivo",
+    "version": "2.0.0",
+    "description": "Aplicación interactiva de glosario usando Electron.",
+    "main": "main.js",
+    "author": "Iván Cruz <ivan4912134@gmail.com>",
+    "dependencies": {
+        "glosario-interactivo": "file:"
+    },
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder"
+    },
+    "devDependencies": {
+        "electron": "^33.2.1",
+        "electron-builder": "^25.1.8"
+    },
+    "build": {
+        "appId": "com.tuempresa.glosario",
+        "asar": false,
+        "productName": "Glosario Interactivo",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "main.js",
+            "css/*",
+            "js/*",
+            "img/*",
+            "audios/**/*",
+            "index.html",
+            "lista.html",
+            "preload.js",
+            "package.json",
+            "node_modules/**/*"
+        ],
+        "win": {
+            "target": "nsis",
+            "icon": "img/atlas.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "shortcutName": "Glosario Interactivo"
+        }
+    }
+}

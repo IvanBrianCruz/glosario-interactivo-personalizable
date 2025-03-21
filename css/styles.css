@@ -1,0 +1,106 @@
+/* General */
+
+/* Header */
+header {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fondo para el <main> */
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #d38312, #a83279, #17b978);
+  color: #ffffff; /* Asegura que el texto sea legible sobre el fondo */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-size: 400% 400%; /* Suaviza el degradado en pantallas más grandes */
+  animation: gradientAnimation 15s ease infinite; /* Añade un movimiento suave al degradado */
+}
+
+/* Animación opcional para que el degradado se desplace */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Footer */
+footer {
+  background: #0a0a0a;
+  color: #ddd;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto; /* Empuja el footer al fondo */
+  background-color: #000000; /* Fondo oscuro */
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row-cols-6 {
+    row-gap: 1.5rem;
+    column-gap: 1rem;
+  }
+}
+
+/* Asegura que el cuerpo ocupe el 100% de la altura de la página */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Asegura que el cuerpo ocupe el 100% de la altura de la ventana */
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina rellenos predeterminados */
+  font-family: Arial, sans-serif;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Cards Grid */
+.card {
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px #bebebe, -3px -3px 6px #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: #333;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+}
+
+.card span {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Social Links */
+.social-footer {
+  margin: 0 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.social-footer:hover {
+  color: #007bff;
+}
+
+/* Footer Social Links */
+.footer-content-social .social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-content-social {
+  margin-top: 10px;
+}

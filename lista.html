@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Audios</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/atlas.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header -->
+  <header class="text-center py-4 bg-primary text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand text-white btn btn-danger d-flex align-items-center" 
+           href="index.html" 
+           style="box-shadow: 0 4px 6px yellow;">
+           <span>🏠</span> Glosario Interactivo
+
+        </a>
+      </div>
+    </nav>
+    
+
+    <h1 class="display-4">Audios de la Letra <span id="letra"></span></h1>
+    <p class="lead">Explora los términos disponibles para esta letra</p>
+  </header>
+
+  <!-- Main -->
+  <main class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="audio-cards"></div>
+  </main>
+
+  
+  <!-- Footer -->
+  <footer >
+
+    <p>Hecho por <strong>Atlas</strong> | Desarrollado por <strong>Cruz Iván Brian - Full Stack Tech Developer</strong>
+      | 2024</p>
+    <p>Para mas informacion: EMAIL: ivan4912134@gmail.com TEL:3884211576</p>
+    <div class="d-flex justify-content-center align-items-center">
+
+      <img src="./img/atlas.png" alt="Logo Atlas" style="width: 50px; height: 50px;">
+    </div>
+
+
+    <div class="footer-content-container">
+      <span class="menu-titulo">Siguenos :</span>
+      <div class="footer-content-social">
+        <div class="social-links">
+          <a href="https://x.com/IvanBrian49?t=OoMAzIuEHzOzETzKqN31PA&s=09" class="social-footer" title="Twitter">🐦</a>
+          <a href="https://www.facebook.com/share/17s8cJbF1n/" class="social-footer" title="Facebook">📘</a>
+          <a href="https://wa.me/qr/J3ZQJ4HI32HIK1" class="social-footer" title="WhatsApp">📱</a>
+          <a href="https://www.linkedin.com/in/ivan-cruz-7a42b4173?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            class="social-footer" title="LinkedIn">🔗</a>
+        </div>
+        
+      </div>
+    </div>
+
+    </div>
+    <div class="copyright-container">
+      <span class="copyright"> © Copyright; Todos los derechos reservados, 2024.</span>
+    </div>
+
+  </footer>
+
+  <script src="js/boots.js"></script>
+  <script src="js/scripts.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const letra = urlParams.get('letra');
+    document.getElementById('letra').textContent = letra;
+
+    // Solicitar los audios desde el backend
+    window.electron.getAudios(letra).then(audios => {
+      const audioCards = document.getElementById('audio-cards');
+      audios.forEach(audio => {
+        const audioCard = document.createElement('div');
+        audioCard.classList.add('col');
+        audioCard.innerHTML = `
+          <div class="card">
+            <audio controls>
+              <source src="audios/${letra}/${audio.name}" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <div class="card-body">
+              <h5 class="card-title">${audio.name}</h5>
+            </div>
+          </div>
+        `;
+        audioCards.appendChild(audioCard);
+      });
+    });
+  </script>
+</body>
+</html>
